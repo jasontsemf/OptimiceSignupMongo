@@ -25,7 +25,6 @@ window.addEventListener("DOMContentLoaded", () => {
         const msg = document.getElementById("message");
         const link = `Return to <a href="https://jasontsemf.github.io/optimice.html">OptiMice Page</a>`;
         msg.innerHTML = `Thank you for signing up, our ${numberToOrdinal(person.ordinal)} follower! <br>${link}`;
-        console.log(res);
         name.value = "";
         email.value = "";
     }
