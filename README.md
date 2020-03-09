@@ -16,7 +16,7 @@ Follow [this guide](https://github.com/itp-dwd/2020-spring/blob/master/guides/in
 
 And follow [this guide](https://github.com/itp-dwd/2020-spring/blob/master/guides/database-services-guide.md#mongodb-atlas) to setup your `MongoDB Atlas`.
 
-If you're set with cloning and `MongoDB Atlas`. Create the file `.env` at the root of the project (reference the very end of the guide). After installing node, with `terminal`, you can
+If you're set with cloning and `MongoDB Atlas`. Create the file `.env` at the root of the project by following [this guide](https://github.com/itp-dwd/2020-spring/blob/master/guides/mongodb-guide.md). After installing node, with `terminal`, you can
 
 ``` sh
 cd the/project/root/path
@@ -79,3 +79,21 @@ app.post('/api/signup', async (req, res, next) => {
 });
 ```
 *Get the total number of records, then insert the user input data with a ordinal number (total number + 1) into `MongoDB`*
+
+![atlas](public/assets/atlas.png)
+*My first entry created on `MongoDB`*
+
+``` Javascript
+const peopleSchema = new Schema({
+    "name": String,
+    "email": String,
+    "ordinal" : Number
+}, {
+    timestamps: {
+        createdAt: 'created_at'
+    }
+});
+```
+*Optionally, I added the timestamps JSON option in the constructor to enable created time*
+
+
