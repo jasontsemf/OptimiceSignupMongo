@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const app = express();
-const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 // config variables
@@ -12,7 +11,8 @@ const mongoose = require('mongoose');
 
 const MONGODB_URI = config.MONGODB_URI;
 mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true 
 });
 
 const peopleDB = require('./models/people');
